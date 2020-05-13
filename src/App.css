@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+h4 {
+  margin-bottom: 10px;
+}
+.container {
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#summary_cards {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  min-width: 500px;
+  background: white;
+  margin: 10px;
+  box-shadow: 0 0 2px #c7c7c7;
+}
+#summary_cards .card {
+  min-width: 300px;
+  max-width: 300px;
+}
+.card .heading {
+  border-bottom: 5px solid #f7f7f7;
+  padding: 10px 15px;
+}
+
+.details {
+  list-style: none;
+}
+
+.details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 2px solid #f7f7f7;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+form > * {
+  margin: 5px 15px;
+  padding: 10px 15px;
+}
+
+form .category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form button {
+  background-color: darkseagreen;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
