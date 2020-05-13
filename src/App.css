@@ -6,19 +6,23 @@ h4 {
 .container {
   margin: auto;
   padding: 10px;
+  background: #f7f7f7;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 100vh;
 }
 #summary_cards {
   margin: 10px 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .card {
   min-width: 500px;
+
   background: white;
   margin: 10px;
   box-shadow: 0 0 2px #c7c7c7;
@@ -34,6 +38,8 @@ h4 {
 
 .details {
   list-style: none;
+  max-height: 250px;
+  overflow-y: scroll;
 }
 
 .details li {
@@ -68,4 +74,15 @@ form button {
   font-size: 1em;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.signin_signup_form {
+  width: 300px;
+  background: white;
+  padding: 10px 15px;
+  box-shadow: 0 0 10px lightgrey;
+  height: 300px;
+}
+.signin_signup_form form > * {
+  margin: 5px 0;
 }

@@ -23,7 +23,7 @@ const ExpenseCard = () => {
         <h4>Expense</h4>
         <p>INR {totalExpense}</p>
       </div>
-      {expenses}
+      <ul className='details'>{expenses}</ul>
     </div>
   );
 };

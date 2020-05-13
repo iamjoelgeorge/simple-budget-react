@@ -23,7 +23,7 @@ const IncomeCard = () => {
         <h4>Income</h4>
         <p>INR {totalIncome}</p>
       </div>
-      {income}
+      <ul className='details'>{income}</ul>
     </div>
   );
 };
