@@ -26,12 +26,6 @@ h4 {
   background: #292d39;
   margin: 10px;
 }
-@media screen and (max-width: 767px){
-  .card{
-    min-width: 300px;
-    max-width: 300px;
-  }
-}
 
 #summary_cards .card {
   min-width: 300px;
@@ -116,4 +110,14 @@ form button {
 
 .signin_signup_form form button {
   margin-top: 10px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  .details {
+    max-height: 100px;
+  }
 }
