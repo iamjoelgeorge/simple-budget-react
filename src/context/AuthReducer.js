@@ -8,7 +8,7 @@ export default (state, action) => {
     case 'VALIDATE_USER':
       return {
         ...state,
-        isRegistered: action.payload
+        isAuthenticated: action.payload
       };
     default:
       return state;

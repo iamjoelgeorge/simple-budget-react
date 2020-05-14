@@ -11,7 +11,7 @@ const initialState = {
       confirmPassword: 'password'
     }
   ],
-  isRegistered: false
+  isAuthenticated: false
 };
 
 //context
@@ -29,10 +29,10 @@ export const AuthProvider = ({ children }) => {
     });
   }
 
-  function validateUser(isRegistered) {
+  function validateUser(isAuthenticated) {
     dispatch({
       type: 'VALIDATE_USER',
-      payload: isRegistered
+      payload: isAuthenticated
     });
   }
 
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         users: state.users,
-        isRegistered: state.isRegistered,
+        isAuthenticated: state.isAuthenticated,
         addUser,
         validateUser
       }}

@@ -1,33 +1,27 @@
 import React, { useContext } from 'react';
 import './App.css';
 
-import Header from './components/Header';
-import IncomeCard from './components/IncomeCard';
-import ExpenseCard from './components/ExpenseCard';
-import AddTransaction from './components/AddTransaction';
 import { TransactionsProvider } from './context/TransactionsContext';
 import { AuthProvider } from './context/AuthContext';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Signup from './components/Signup';
 import SignIn from './components/Signin';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
-    <AuthProvider>
-      <TransactionsProvider>
-        <div className='container'>
-          {/* <Header />
-          <div id='summary_cards'>
-            <IncomeCard />
-            <ExpenseCard />
+    <BrowserRouter>
+      <AuthProvider>
+        <TransactionsProvider>
+          <div className='container'>
+            <Switch>
+              <Route exact path='/' component={SignIn} />
+              <Route exact path='/dashboard' component={Dashboard} />
+            </Switch>
           </div>
-          <AddTransaction /> */}
-
-          {/* <Signup /> */}
-          <SignIn />
-        </div>
-      </TransactionsProvider>
-    </AuthProvider>
+        </TransactionsProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

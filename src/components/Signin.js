@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
+
 import { AuthContext } from '../context/AuthContext';
 
 const SignIn = () => {
-  const { users, validateUser, isRegistered } = useContext(AuthContext);
+  const { users, validateUser } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,14 +16,14 @@ const SignIn = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    let isRegistered;
-    users.map(user => {
+    let isAuthenticated;
+    users.forEach(user => {
       if (email === user.email && password === user.password) {
-        isRegistered = true;
-        validateUser(isRegistered);
-      } else{
-        isRegistered = false;
-        validateUser(isRegistered);
+        isAuthenticated = true;
+        validateUser(isAuthenticated);
+      } else {
+        isAuthenticated = false;
+        validateUser(isAuthenticated);
       }
     });
   };
