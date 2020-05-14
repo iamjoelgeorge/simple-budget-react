@@ -15,8 +15,8 @@ h4 {
 #summary_cards {
   margin: 10px 0;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
+  overflow-x: scroll;
 }
 
 .card {
