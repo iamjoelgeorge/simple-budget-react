@@ -1,3 +1,9 @@
+:root {
+  --main-bg-color: #181c28;
+  --card-bg-color: #292d39;
+  --submit-btn-bg-color: darkseagreen;
+  --primary-text-color: white;
+}
 h4 {
   margin-bottom: 10px;
 }
@@ -5,7 +11,7 @@ h4 {
   margin: auto;
   padding: 10px;
   /* background: #f7f7f7; */
-  background: #181c28;
+  background: var(--main-bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,9 +27,7 @@ h4 {
 
 .card {
   min-width: 500px;
-
-  /* background: white; */
-  background: #292d39;
+  background: var(--card-bg-color);
   margin: 10px;
 }
 
@@ -32,12 +36,12 @@ h4 {
   max-width: 300px;
 }
 .card .heading {
-  border-bottom: 1px solid #181c28;
+  border-bottom: 2px solid var(--main-bg-color);
   padding: 10px 15px;
 }
 
 .card .heading h4 {
-  color: white;
+  color: var(--primary-text-color);
 }
 
 .details {
@@ -51,8 +55,8 @@ h4 {
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  border-bottom: 2px solid #181c28;
-  color: white;
+  border-bottom: 1px solid var(--main-bg-color);
+  color: var(--primary-text-color);
 }
 
 form {
@@ -62,9 +66,9 @@ form {
 }
 
 form input {
-  background: #181c28;
+  background: var(--main-bg-color);
   border: none;
-  color: white;
+  color: var(--primary-text-color);
 }
 
 form > * {
@@ -79,14 +83,14 @@ form .category {
 }
 
 select#category {
-  background: #181c28;
-  color: white;
+  background: var(--main-bg-color);
+  color: var(--primary-text-color);
   border: none;
 }
 
 form button {
-  background-color: darkseagreen;
-  color: white;
+  background-color: var(--submit-btn-bg-color);
+  color: var(--primary-text-color);
   font-weight: bold;
   font-size: 1em;
   text-transform: uppercase;
@@ -99,8 +103,8 @@ form button {
 
 .signin_signup_form {
   width: 300px;
-  background: #292d39;
-  color: white;
+  background: var(--card-bg-color);
+  color: var(--primary-text-color);
   padding: 10px 15px;
   height: 300px;
 }
@@ -121,11 +125,11 @@ form button {
     max-height: 100px;
   }
 }
-@media screen and (min-width: 768px){
-  #summary_cards{
+@media screen and (min-width: 768px) {
+  #summary_cards {
     justify-content: center;
   }
 }
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
   display: none;
 }
