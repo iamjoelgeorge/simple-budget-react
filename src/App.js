@@ -15,8 +15,8 @@ function App() {
         <TransactionsProvider>
           <div className='container'>
             <Switch>
-              <Route exact path='/' component={SignIn} />
-              <Route exact path='/dashboard' component={Dashboard} />
+              <Route exact path='/simple-budget-react/' component={SignIn} />
+              <Route exact path='/simple-budget-react/dashboard/' component={Dashboard} />
             </Switch>
           </div>
         </TransactionsProvider>

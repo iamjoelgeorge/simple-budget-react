@@ -21,7 +21,7 @@ const SignIn = props => {
       if (email === user.email && password === user.password) {
         isAuthenticated = true;
         validateUser(isAuthenticated);
-        props.history.push("/dashboard");
+        props.history.push("/simple-budget-react/dashboard/");
       } else {
         isAuthenticated = false;
         validateUser(isAuthenticated);
