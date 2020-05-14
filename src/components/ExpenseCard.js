@@ -21,7 +21,7 @@ const ExpenseCard = () => {
     <div className='card'>
       <div className='heading'>
         <h4>Expense</h4>
-        <p>INR {totalExpense}</p>
+        <p style={{color: "#f84e4e"}}>INR {totalExpense}</p>
       </div>
       <ul className='details'>{expenses}</ul>
     </div>

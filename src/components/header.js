@@ -13,11 +13,17 @@ const Header = () => {
     .reduce((total, transaction) => total + transaction.amount, 0);
 
   const balance = totalIncome - totalExpense;
+  const style = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column"
+  }
   return (
-    <>
-      <h3 style={{ marginLeft: '15px' }}>Your Balance</h3>
-      <p>{balance}</p>
-    </>
+    <div style={style}>
+      <h3 style={{ marginLeft: '15px', color: "white" }}>Your Balance</h3>
+      <p style={{color: "white", fontSize: "2em"}}>{balance}</p>
+    </div>
   );
 };
 

@@ -4,7 +4,8 @@ h4 {
 .container {
   margin: auto;
   padding: 10px;
-  background: #f7f7f7;
+  /* background: #f7f7f7; */
+  background: #181c28;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,17 +22,21 @@ h4 {
 .card {
   min-width: 500px;
 
-  background: white;
+  /* background: white; */
+  background: #292d39;
   margin: 10px;
-  box-shadow: 0 0 2px #c7c7c7;
 }
 #summary_cards .card {
   min-width: 300px;
   max-width: 300px;
 }
 .card .heading {
-  border-bottom: 5px solid #f7f7f7;
+  border-bottom: 1px solid #181c28;
   padding: 10px 15px;
+}
+
+.card .heading h4 {
+  color: white;
 }
 
 .details {
@@ -45,13 +50,20 @@ h4 {
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  border-bottom: 2px solid #f7f7f7;
+  border-bottom: 2px solid #181c28;
+  color: white;
 }
 
 form {
   display: flex;
   flex-direction: column;
   padding: 10px 0;
+}
+
+form input {
+  background: #181c28;
+  border: none;
+  color: white;
 }
 
 form > * {
@@ -65,20 +77,27 @@ form .category {
   align-items: center;
 }
 
+select#category{
+  background: #181c28;
+  color: white;
+  border: none;
+}
+
 form button {
   background-color: darkseagreen;
   color: white;
   font-weight: bold;
   font-size: 1em;
   text-transform: uppercase;
+  border: none;
   cursor: pointer;
 }
 
 .signin_signup_form {
   width: 300px;
-  background: white;
+  background: #292d39;
+  color: white;
   padding: 10px 15px;
-  box-shadow: 0 0 10px lightgrey;
   height: 300px;
 }
 .signin_signup_form form > * {

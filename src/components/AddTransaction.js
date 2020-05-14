@@ -5,7 +5,7 @@ const AddTransaction = () => {
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState('Income');
-  const { transactions, addTransaction } = useContext(TransactionsContext);
+  const { addTransaction } = useContext(TransactionsContext);
 
   const updateDescription = e => {
     setDescription(e.target.value);

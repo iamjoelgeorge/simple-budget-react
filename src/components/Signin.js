@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
 const SignIn = props => {
-  const { users, validateUser, isAuthenticated } = useContext(AuthContext);
+  const { users, validateUser } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 

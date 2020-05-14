@@ -21,7 +21,7 @@ const IncomeCard = () => {
     <div className='card'>
       <div className='heading'>
         <h4>Income</h4>
-        <p>INR {totalIncome}</p>
+        <p style={{color: "#3fb485"}}>INR {totalIncome}</p>
       </div>
       <ul className='details'>{income}</ul>
     </div>
