@@ -15,7 +15,6 @@ h4 {
 #summary_cards {
   margin: 10px 0;
   display: flex;
-  justify-content: center;
   width: 100%;
   overflow-x: scroll;
 }
@@ -120,5 +119,10 @@ form button {
   }
   .details {
     max-height: 100px;
+  }
+}
+@media screen and (min-width: 768px){
+  #summary_cards{
+    justify-content: center;
   }
 }
