@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 
 import { AuthContext } from '../context/AuthContext';
 
-const SignIn = () => {
-  const { users, validateUser } = useContext(AuthContext);
+const SignIn = props => {
+  const { users, validateUser, isAuthenticated } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,6 +21,7 @@ const SignIn = () => {
       if (email === user.email && password === user.password) {
         isAuthenticated = true;
         validateUser(isAuthenticated);
+        props.history.push("/dashboard");
       } else {
         isAuthenticated = false;
         validateUser(isAuthenticated);
