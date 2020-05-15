@@ -23,7 +23,7 @@ const ConfirmModal = ({ transactionToDelete }) => {
   return (
     <div className='modal'>
       <div className='modal-box'>
-        <p>Are you sure that you want to delete this transaction?</p>
+        <p>Are you sure?</p>
         <div className='modal-box_buttons'>
           <button onClick={deleteItem}>Yes</button>
           <button onClick={closeModal} className='danger'>

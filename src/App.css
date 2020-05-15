@@ -167,12 +167,12 @@ form button,
 
 .modal .modal-box_buttons button {
   padding: 10px 15px;
-  margin: 0 10px !important;
+  margin: 5px 10px !important;
   width: 100px;
 }
 
 .modal .modal-box_buttons {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .danger {
