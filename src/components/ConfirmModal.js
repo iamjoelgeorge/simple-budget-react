@@ -18,6 +18,7 @@ const ConfirmModal = ({ transactionToDelete }) => {
 
   const closeModal = () => {
     toggleModal();
+    transactionToDelete.toDelete = false;
   };
 
   return (

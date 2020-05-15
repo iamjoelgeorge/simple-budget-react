@@ -1,6 +1,6 @@
 * {
   outline-width: 1px;
-  outline-color: var(--main-bg-color)
+  outline-color: var(--main-bg-color);
 }
 :root {
   --main-bg-color: #181c28;
@@ -56,6 +56,7 @@ h4 {
 }
 
 .details li {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -177,4 +178,33 @@ form button,
 
 .danger {
   background: var(--danger-btn) !important;
+}
+
+.delete_overlay {
+  background: var(--main-bg-color);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.97;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+.delete_overlay-text{
+  display: none;
+  position: absolute;
+  left: 20%;
+  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+.details li:hover .delete_overlay{
+  display: flex;
+}
+.details li:hover .delete_overlay-text{
+  display: block;
 }
