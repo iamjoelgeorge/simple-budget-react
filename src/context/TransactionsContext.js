@@ -2,7 +2,8 @@ import React, { createContext, useReducer } from 'react';
 import TransactionReducer from './TransactionReducer';
 
 const initialState = {
-  transactions: []
+  transactions: [],
+  isModalOpen: false
 };
 
 //context
@@ -19,11 +20,25 @@ export const TransactionsProvider = ({ children }) => {
       payload: transaction
     });
   }
-
-  function deleteTransaction(filteredTransactions){
+  
+  
+  function selectedForDeletion(transaction){
+    dispatch({
+      type: 'TO_DELETE',
+      payload: transaction
+    })
+  }
+  
+  function deleteTransaction(updatedTransactions){
     dispatch({
       type: 'DELETE_TRANSACTIONS',
-      payload: filteredTransactions
+      payload: updatedTransactions
+    })
+  }
+  
+  function toggleModal(){
+    dispatch({
+      type: 'IS_MODAL_OPEN',
     })
   }
 
@@ -31,8 +46,11 @@ export const TransactionsProvider = ({ children }) => {
     <TransactionsContext.Provider
       value={{
         transactions: state.transactions,
+        isModalOpen: state.isModalOpen,
+        toggleModal,
         addTransaction,
-        deleteTransaction
+        deleteTransaction,
+        selectedForDeletion
       }}
     >
       {children}

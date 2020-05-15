@@ -5,6 +5,16 @@ export default (state, action) => {
         ...state,
         transactions: [...state.transactions, action.payload]
       };
+    case 'TO_DELETE':
+      return {
+        ...state,
+        transactions: [...action.payload]
+      };
+    case 'IS_MODAL_OPEN':
+      return {
+        ...state,
+        isModalOpen: !state.isModalOpen
+      };
     case 'DELETE_TRANSACTIONS':
       return {
         ...state,

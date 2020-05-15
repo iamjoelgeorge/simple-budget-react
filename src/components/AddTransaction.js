@@ -26,7 +26,8 @@ const AddTransaction = () => {
       id: Math.floor(Math.random() * 100002),
       description,
       amount: +amount,
-      category
+      category,
+      toDelete: false
     };
 
     addTransaction(newTransaction);

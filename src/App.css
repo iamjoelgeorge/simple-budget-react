@@ -1,8 +1,13 @@
+* {
+  outline-width: 1px;
+  outline-color: var(--main-bg-color)
+}
 :root {
   --main-bg-color: #181c28;
   --card-bg-color: #292d39;
   --submit-btn-bg-color: darkseagreen;
   --primary-text-color: white;
+  --danger-btn: #e4615a;
 }
 h4 {
   margin-bottom: 10px;
@@ -88,7 +93,8 @@ select#category {
   border: none;
 }
 
-form button {
+form button,
+.modal .modal-box_buttons button {
   background-color: var(--submit-btn-bg-color);
   color: var(--primary-text-color);
   font-weight: bold;
@@ -132,4 +138,43 @@ form button {
 }
 *::-webkit-scrollbar {
   display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modal-box {
+  width: 50%;
+  height: 30%;
+  padding: 10px 15px;
+  background: var(--card-bg-color);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-text-color);
+}
+
+.modal .modal-box_buttons button {
+  padding: 10px 15px;
+  margin: 0 10px !important;
+  width: 100px;
+}
+
+.modal .modal-box_buttons {
+  margin-top: 15px;
+}
+
+.danger {
+  background: var(--danger-btn) !important;
 }
