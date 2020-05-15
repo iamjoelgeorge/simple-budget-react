@@ -5,6 +5,11 @@ export default (state, action) => {
         ...state,
         transactions: [...state.transactions, action.payload]
       };
+    case 'DELETE_TRANSACTIONS':
+      return {
+        ...state,
+        transactions: [...action.payload]
+      };
     default:
       return state;
   }

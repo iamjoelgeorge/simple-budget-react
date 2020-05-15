@@ -20,11 +20,19 @@ export const TransactionsProvider = ({ children }) => {
     });
   }
 
+  function deleteTransaction(filteredTransactions){
+    dispatch({
+      type: 'DELETE_TRANSACTIONS',
+      payload: filteredTransactions
+    })
+  }
+
   return (
     <TransactionsContext.Provider
       value={{
         transactions: state.transactions,
-        addTransaction
+        addTransaction,
+        deleteTransaction
       }}
     >
       {children}
