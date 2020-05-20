@@ -19,6 +19,7 @@ const TransactionSummary = ({ transaction }) => {
         transaction.toDelete = true;
       }
     });
+
     selectedForDeletion(mutatedTransactions);
     toggleModal();
   };
@@ -33,8 +34,8 @@ const TransactionSummary = ({ transaction }) => {
   return (
     <>
       <li onDoubleClick={onDoubleClick.bind(this, transaction)}>
-        <div className="delete_overlay"></div>
-        <div className="delete_overlay-text">Double click to delete</div>
+        <div className='delete_overlay'></div>
+        <div className='delete_overlay-text'>Double click to delete</div>
         {transaction.description} <span>INR {transaction.amount}</span>
       </li>
       {confirmModal}

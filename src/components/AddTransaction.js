@@ -22,6 +22,11 @@ const AddTransaction = () => {
   const onSubmit = e => {
     e.preventDefault();
 
+    if (amount <= 0) {
+      alert('Please enter a valid amount');
+      return;
+    }
+
     const newTransaction = {
       id: Math.floor(Math.random() * 100002),
       description,

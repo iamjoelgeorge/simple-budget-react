@@ -1,12 +1,16 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import TransactionReducer from './TransactionReducer';
 
+let data;
+
+if (localStorage.getItem('transactions')) {
+  data = JSON.parse(localStorage.getItem('transactions'));
+} else {
+  data = [];
+}
+
 const initialState = {
-  transactions: [
-    {id: "1", description: "One", amount: 2000, category: "Income", toDelete: false},
-    {id: "2", description: "Two", amount: 2000, category: "Income", toDelete: false},
-    {id: "3", description: "Three", amount: 2000, category: "Income", toDelete: false}
-  ],
+  transactions: [...data],
   isModalOpen: false
 };
 
@@ -17,6 +21,16 @@ export const TransactionsContext = createContext(initialState);
 export const TransactionsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(TransactionReducer, initialState);
 
+  useEffect(() => {
+    const data = localStorage.getItem('transactions');
+    if (data) {
+      initialState.transactions = JSON.parse(data);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(state.transactions));
+  });
   //actions
   function addTransaction(transaction) {
     dispatch({
@@ -24,26 +38,25 @@ export const TransactionsProvider = ({ children }) => {
       payload: transaction
     });
   }
-  
-  
-  function selectedForDeletion(transaction){
+
+  function selectedForDeletion(transaction) {
     dispatch({
       type: 'TO_DELETE',
       payload: transaction
-    })
+    });
   }
-  
-  function deleteTransaction(updatedTransactions){
+
+  function deleteTransaction(updatedTransactions) {
     dispatch({
       type: 'DELETE_TRANSACTIONS',
       payload: updatedTransactions
-    })
+    });
   }
-  
-  function toggleModal(){
+
+  function toggleModal() {
     dispatch({
-      type: 'IS_MODAL_OPEN',
-    })
+      type: 'IS_MODAL_OPEN'
+    });
   }
 
   return (

@@ -7,12 +7,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import SignIn from './components/Signin';
 import Dashboard from './components/Dashboard';
-import ConfirmModal from './components/ConfirmModal';
 
 function App() {
   return (
     <BrowserRouter>
-    {/* <ConfirmModal /> */}
       <AuthProvider>
         <TransactionsProvider>
           <div className='container'>

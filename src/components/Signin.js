@@ -21,10 +21,11 @@ const SignIn = props => {
       if (email === user.email && password === user.password) {
         isAuthenticated = true;
         validateUser(isAuthenticated);
-        props.history.push("/simple-budget-react/dashboard/");
+        props.history.push('/simple-budget-react/dashboard/');
       } else {
         isAuthenticated = false;
         validateUser(isAuthenticated);
+        alert('Please enter valid credentials');
       }
     });
   };
@@ -38,12 +39,14 @@ const SignIn = props => {
           placeholder='Email'
           value={email}
           onChange={updateEmail}
+          required
         />
         <input
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
+          required
         />
 
         <button type='submit'>Sign In</button>

@@ -197,6 +197,7 @@ form button,
 
 .delete_overlay-text{
   display: none;
+  user-select: none;
   position: absolute;
   left: 20%;
   transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1)
