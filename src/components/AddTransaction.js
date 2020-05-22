@@ -7,8 +7,10 @@ const AddTransaction = ({ toggleTransactionModal }) => {
   const [amount, setAmount] = useState(0);
   const [date, setDate] = useState(0);
   const [category, setCategory] = useState('Income');
-  const [subCategory, setSubCategory] = useState('Food');
-  const { addTransaction } = useContext(TransactionsContext);
+  const [subCategory, setSubCategory] = useState('Salary');
+  const { addTransaction, expenseSubCategories } = useContext(
+    TransactionsContext
+  );
 
   const updateDescription = e => {
     setDescription(e.target.value);
@@ -20,6 +22,9 @@ const AddTransaction = ({ toggleTransactionModal }) => {
 
   const updateCategory = e => {
     setCategory(e.target.value);
+    if (e.target.value.toLowerCase().trim() === 'expense') {
+      setSubCategory(Object.keys(expenseSubCategories)[0]);
+    }
   };
 
   const updateDate = e => {

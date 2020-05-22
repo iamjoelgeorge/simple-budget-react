@@ -83,7 +83,7 @@ const TransactionSummary = () => {
           <thead>
             <tr>
               <th>Date</th>
-              <th style={{ textAlign: 'right' }}>Amount (INR)</th>
+              <th style={{ textAlign: 'right' }}>Amount</th>
               <th>Description</th>
               <th>Category</th>
             </tr>
