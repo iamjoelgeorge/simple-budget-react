@@ -11,7 +11,11 @@ if (localStorage.getItem('transactions')) {
 
 const initialState = {
   transactions: [...data],
-  isModalOpen: false
+  totalIncome: 0,
+  totalExpenses: 0,
+  isModalOpen: false,
+  incomeSubCategories: { Salary: 0, Others: 0 },
+  expenseSubCategories: { Food: 0, Shopping: 0, Grocery: 0, Others: 0 }
 };
 
 //context
@@ -53,6 +57,27 @@ export const TransactionsProvider = ({ children }) => {
     });
   }
 
+  function updateTotalIncomeExpenses(amount) {
+    dispatch({
+      type: 'TOTAL_INCOME_EXPENSES',
+      payload: amount
+    });
+  }
+
+  function updateIncomeSubCategoriesTotal(subCategories) {
+    dispatch({
+      type: 'UPDATE_INCOME_SUB_CATEGORIES_TOTAL',
+      payload: subCategories
+    });
+  }
+  
+  function updateExpenseSubCategoriesTotal(subCategories) {
+    dispatch({
+      type: 'UPDATE_EXPENSE_SUB_CATEGORIES_TOTAL',
+      payload: subCategories
+    });
+  }
+
   function toggleModal() {
     dispatch({
       type: 'IS_MODAL_OPEN'
@@ -64,10 +89,17 @@ export const TransactionsProvider = ({ children }) => {
       value={{
         transactions: state.transactions,
         isModalOpen: state.isModalOpen,
+        incomeSubCategories: state.incomeSubCategories,
+        expenseSubCategories: state.expenseSubCategories,
+        totalExpenses: state.totalExpenses,
+        totalIncome: state.totalIncome,
+        updateTotalIncomeExpenses,
+        updateExpenseSubCategoriesTotal,
         toggleModal,
         addTransaction,
         deleteTransaction,
-        selectedForDeletion
+        selectedForDeletion,
+        updateIncomeSubCategoriesTotal
       }}
     >
       {children}

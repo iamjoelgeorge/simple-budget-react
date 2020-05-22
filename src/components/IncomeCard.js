@@ -1,29 +1,58 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { TransactionsContext } from '../context/TransactionsContext';
-import Transaction from './Transaction';
 
 const IncomeCard = () => {
-  const { transactions } = useContext(TransactionsContext);
+  const {
+    transactions,
+    incomeSubCategories,
+    updateIncomeSubCategoriesTotal,
+    totalIncome
+  } = useContext(TransactionsContext);
+
+  const mutatedSubCategories = { ...incomeSubCategories };
+  const subCategoriesArray = Object.keys(mutatedSubCategories);
+
+  //Updating the total amount of the subcategories
   const incomeArray = transactions.filter(
-    transaction => transaction.category.toLowerCase() === 'income'
+    transaction => transaction.category.toLowerCase().trim() === 'income'
   );
 
-  const income = incomeArray.map(transaction => (
-    <Transaction transaction={transaction} key={transaction.id} />
-  ));
+  subCategoriesArray.forEach(item => {
+    const filteredSubCategories = incomeArray.filter(
+      transaction =>
+        transaction.subCategory.toLowerCase().trim() ===
+        item.toLowerCase().trim()
+    );
+    if (filteredSubCategories.length > 0) {
+      mutatedSubCategories[item] = filteredSubCategories.reduce(
+        (total, transaction) => total + transaction.amount,
+        0
+      );
+    } else {
+      mutatedSubCategories[item] = 0;
+    }
+  });
 
-  const totalIncome = incomeArray.reduce(
-    (total, transaction) => total + transaction.amount,
-    0
-  );
+  useEffect(() => {
+    updateIncomeSubCategoriesTotal(mutatedSubCategories);
+  }, [transactions]);
 
   return (
     <div className='card'>
       <div className='heading'>
-        <h4>Income</h4>
-        <p style={{color: "#3fb485"}}>INR {totalIncome}</p>
+        <h5>INCOME</h5>
+        <p style={{ color: '#3fb485' }}>INR {totalIncome}</p>
       </div>
-      <ul className='details'>{income}</ul>
+      <div className='content'>
+        <ul>
+          <li>
+            Salary <span className='amount'>{incomeSubCategories.Salary}</span>
+          </li>
+          <li>
+            Others <span className='amount'>{incomeSubCategories.Others}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

@@ -20,6 +20,22 @@ export default (state, action) => {
         ...state,
         transactions: [...action.payload]
       };
+    case 'UPDATE_INCOME_SUB_CATEGORIES_TOTAL':
+      return {
+        ...state,
+        incomeSubCategories: { ...action.payload }
+      };
+    case 'UPDATE_EXPENSE_SUB_CATEGORIES_TOTAL':
+      return {
+        ...state,
+        expenseSubCategories: { ...action.payload }
+      };
+    case 'TOTAL_INCOME_EXPENSES':
+      return {
+        ...state,
+        totalIncome: action.payload.totalIncome,
+        totalExpenses: action.payload.totalExpenses
+      };
     default:
       return state;
   }

@@ -2,15 +2,20 @@
   outline-width: 1px;
   outline-color: var(--main-bg-color);
 }
+
 :root {
   --main-bg-color: #181c28;
   --card-bg-color: #292d39;
   --submit-btn-bg-color: darkseagreen;
   --primary-text-color: white;
+  --secondary-text-color: #7882a2;
   --danger-btn: #e4615a;
+  --table-border: #383d4d;
 }
-h4 {
+h4,
+h5 {
   margin-bottom: 10px;
+  color: var(--primary-text-color);
 }
 .container {
   margin: auto;
@@ -45,10 +50,6 @@ h4 {
   padding: 10px 15px;
 }
 
-.card .heading h4 {
-  color: var(--primary-text-color);
-}
-
 .details {
   list-style: none;
   max-height: 250px;
@@ -72,8 +73,8 @@ form {
 }
 
 form input {
-  background: var(--main-bg-color);
   border: none;
+  background: var(--main-bg-color);
   color: var(--primary-text-color);
 }
 
@@ -82,16 +83,33 @@ form > * {
   padding: 10px 15px;
 }
 
-form .category {
+form .category,
+form .sub-category {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px 15px;
+  padding: 0;
 }
 
-select#category {
+select#category,
+select#sub-category {
   background: var(--main-bg-color);
   color: var(--primary-text-color);
   border: none;
+  width: 100%;
+  height: 30px;
+}
+.transaction-summary select#sub-category {
+  background: transparent !important;
+  color: var(--secondary-text-color) !important;
+}
+.add-transaction-card select#sub-category {
+  background: var(--main-bg-color) !important;
+}
+
+.add-transaction-card #categories {
+  margin-top: 0;
 }
 
 form button,
@@ -180,32 +198,152 @@ form button,
   background: var(--danger-btn) !important;
 }
 
-.delete_overlay {
-  background: var(--main-bg-color);
-  height: 100%;
-  width: 100%;
-  display: flex;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0.97;
-  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1)
-}
-
-.delete_overlay-text{
-  display: none;
-  user-select: none;
-  position: absolute;
-  left: 20%;
-  transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1)
-}
-
-.details li:hover .delete_overlay{
+.details li:hover .delete_overlay {
   display: flex;
 }
-.details li:hover .delete_overlay-text{
+.details li:hover .delete_overlay-text {
   display: block;
+}
+.transaction-summary {
+  background: var(--card-bg-color);
+  border-radius: 3px;
+  width: 600px;
+  max-width: 100%;
+  overflow: scroll;
+}
+
+.transaction-summary > * {
+  color: var(--primary-text-color);
+}
+
+.transaction-summary table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.transaction-summary table th,
+.transaction-summary table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid var(--table-border);
+}
+
+.transaction-summary table th {
+  text-align: left;
+  font-weight: 400;
+  border-top: 1px solid var(--table-border);
+}
+
+.transaction-summary table td {
+  font-size: 14px;
+  max-width: 150px;
+  color: var(--secondary-text-color);
+}
+
+.transaction-summary select {
+  background: transparent;
+  color: var(--secondary-text-color);
+  border: none;
+}
+
+.transaction-summary .description {
+  min-width: 150px;
+  max-width: 290px;
+}
+
+.transaction-summary .amount {
+  text-align: right;
+}
+
+.transaction-summary .heading {
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.transaction-summary .heading * {
+  margin: 0;
+}
+
+.transaction-summary .heading select {
+  border: 1px solid var(--table-border);
+  border-radius: 3px;
+  height: 31px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.transaction-summary .add-transaction-btn {
+  margin-left: auto;
+  margin-right: 10px;
+  padding: 8px 19px;
+  background: transparent;
+  color: var(--secondary-text-color);
+  border: 1px solid var(--table-border);
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-transaction-container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+.add-transaction-container .overlay {
+  width: 100%;
+  height: 100%;
+  background: var(--main-bg-color);
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.add-transaction-card {
+  width: 400px;
+  max-width: 90%;
+  height: 400px;
+  background: var(--card-bg-color);
+  z-index: 2;
+}
+
+.add-transaction-card form {
+  height: 100%;
+}
+
+.card .content ul {
+  list-style: none;
+}
+.card .content ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: var(--secondary-text-color);
+  border-bottom: 1px solid var(--table-border);
+}
+
+.close-btn {
+  color: var(--danger-btn);
+  z-index: 2;
+  border: 1px solid;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.add-transaction-card .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

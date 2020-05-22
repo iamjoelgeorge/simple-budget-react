@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { TransactionsContext } from '../context/TransactionsContext';
 import ConfirmModal from './ConfirmModal';
 
-const TransactionSummary = ({ transaction }) => {
+const Transaction = ({ transaction }) => {
   const {
     transactions,
     selectedForDeletion,
@@ -33,14 +33,16 @@ const TransactionSummary = ({ transaction }) => {
 
   return (
     <>
-      <li onDoubleClick={onDoubleClick.bind(this, transaction)}>
-        <div className='delete_overlay'></div>
-        <div className='delete_overlay-text'>Double click to delete</div>
-        {transaction.description} <span>INR {transaction.amount}</span>
-      </li>
+      <tr onDoubleClick={onDoubleClick.bind(this, transaction)}>
+        <td className='date'>{transaction.date}</td>
+        <td className='amount'>{transaction.amount}</td>
+        <td className='description'>{transaction.description}</td>
+        <td className='sub-category'>{transaction.subCategory}</td>
+      </tr>
+
       {confirmModal}
     </>
   );
 };
 
-export default TransactionSummary;
+export default Transaction;
