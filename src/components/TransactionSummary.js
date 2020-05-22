@@ -6,8 +6,13 @@ import Transaction from './Transaction';
 const TransactionSummary = () => {
   const { transactions } = useContext(TransactionsContext);
   const [modal, setModal] = useState(false);
+  const [category, setCategory] = useState('expense');
 
   let transactionModal = null;
+
+  const updateCategory = e => {
+    setCategory(e.target.value);
+  };
 
   const toggleTransactionModal = () => {
     setModal(!modal);
@@ -21,14 +26,34 @@ const TransactionSummary = () => {
 
   let transaction = (
     <tr>
-      <td style={{textAlign: "center"}} colSpan="4">No transactions to display</td>
+      <td style={{ textAlign: 'center' }} colSpan='4'>
+        No transactions to display
+      </td>
     </tr>
   );
 
   if (transactions.length > 0) {
-    transaction = transactions.map(transaction => {
-      return <Transaction transaction={transaction} key={transaction.id} />;
-    });
+    const expensesArray = transactions.filter(
+      transaction => transaction.category.toLowerCase().trim() === 'expense'
+    );
+
+    const incomeArray = transactions.filter(
+      transaction => transaction.category.toLowerCase().trim() === 'income'
+    );
+
+    if (category.toLowerCase().trim() === 'expense') {
+      if (expensesArray.length > 0) {
+        transaction = expensesArray.map(transaction => {
+          return <Transaction transaction={transaction} key={transaction.id} />;
+        });
+      }
+    } else {
+      if (incomeArray.length > 0) {
+        transaction = incomeArray.map(transaction => {
+          return <Transaction transaction={transaction} key={transaction.id} />;
+        });
+      }
+    }
   }
 
   return (
@@ -46,6 +71,8 @@ const TransactionSummary = () => {
             <select
               name='transaction-summary-category'
               id='transaction-summary-category-dropdown'
+              value={category}
+              onChange={updateCategory}
             >
               <option value='expense'>Expense</option>
               <option value='income'>Income</option>
@@ -61,8 +88,7 @@ const TransactionSummary = () => {
               <th>Category</th>
             </tr>
           </thead>
-          {/* <tbody>{transaction}</tbody> */}
-          {transaction}
+          <tbody>{transaction}</tbody>
         </table>
       </div>
       {transactionModal}
