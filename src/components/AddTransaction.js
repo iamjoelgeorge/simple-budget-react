@@ -3,9 +3,24 @@ import { TransactionsContext } from '../context/TransactionsContext';
 import SubCategories from './SubCategories';
 
 const AddTransaction = ({ toggleTransactionModal }) => {
+  const myDate = new Date();
+  let thisDay = myDate.getDay();
+  let month = myDate.getMonth() + 1;
+  const year = myDate.getFullYear();
+
+  if (thisDay < 10) {
+    thisDay = `0${thisDay}`;
+  }
+
+  if (month < 10) {
+    month = `0${month}`;
+  }
+
+  const today = `${year}:${month}:${thisDay}`;
+
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState(0);
-  const [date, setDate] = useState(0);
+  const [date, setDate] = useState(today);
   const [category, setCategory] = useState('Income');
   const [subCategory, setSubCategory] = useState('Salary');
   const { addTransaction, expenseSubCategories } = useContext(
