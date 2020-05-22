@@ -262,7 +262,7 @@ form button,
   flex-wrap: wrap;
 }
 
-.transaction-summary .heading * {
+.transaction-summary .heading > * {
   margin: 0;
 }
 
@@ -277,6 +277,7 @@ form button,
 .transaction-summary .add-transaction-btn {
   margin-left: auto;
   margin-right: 10px;
+  width: auto;
   padding: 8px 19px;
   background: transparent;
   color: var(--secondary-text-color);
@@ -346,4 +347,13 @@ form button,
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  .transaction-summary .heading > * {
+    width: 100%;
+  }
+  .transaction-summary .transaction-actions {
+    margin-top: 15px;
+  }
 }

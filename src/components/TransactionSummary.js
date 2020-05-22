@@ -61,7 +61,7 @@ const TransactionSummary = () => {
       <div className='transaction-summary'>
         <div className='heading'>
           <h5>TRANSACTIONS</h5>
-          <div>
+          <div className="transaction-actions">
             <button
               className='add-transaction-btn'
               onClick={toggleTransactionModal}
