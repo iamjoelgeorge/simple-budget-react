@@ -4,6 +4,7 @@ import IncomeCard from './IncomeCard';
 import ExpenseCard from './ExpenseCard';
 import TransactionSummary from './TransactionSummary';
 import { TransactionsContext } from '../context/TransactionsContext';
+import Chart from './Chart';
 
 const Dashboard = () => {
   const { transactions, updateTotalIncomeExpenses } = useContext(
@@ -38,7 +39,10 @@ const Dashboard = () => {
         <IncomeCard />
         <ExpenseCard />
       </div>
-      <TransactionSummary />
+      <div style={{ maxWidth: '100%' }}>
+        <TransactionSummary />
+        <Chart />
+      </div>
     </>
   );
 };

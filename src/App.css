@@ -256,6 +256,7 @@ form button,
   border-radius: 3px;
   width: 600px;
   max-width: 100%;
+  min-height: 250px;
   overflow: scroll;
 }
 
@@ -401,6 +402,10 @@ form button,
   justify-content: space-between;
   color: var(--primary-text-color);
   border-bottom: 1px solid var(--table-border);
+}
+
+.chart{
+  margin-top: 15px;
 }
 
 @media screen and (max-width: 400px) {
