@@ -256,7 +256,6 @@ form button,
   border-radius: 3px;
   width: 600px;
   max-width: 100%;
-  min-height: 250px;
   overflow: scroll;
 }
 
