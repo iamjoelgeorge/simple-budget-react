@@ -20,7 +20,6 @@ function App() {
               <Route exact path='/simple-budget-react/' component={SignIn} />
               <Route exact path='/simple-budget-react/dashboard/' component={Dashboard} />
             </Switch>
-            {/* <AddTransaction /> */}
           </div>
         </TransactionsProvider>
       </AuthProvider>

@@ -42,6 +42,10 @@ const ExpenseCard = () => {
         <p style={{ color: '#f84e4e' }}>INR {totalExpenses}</p>
       </div>
       <div className='content'>
+        <div className='content-heading'>
+          <p>Category</p>
+          <p>Amount</p>
+        </div>
         <ul>
           <li>
             Food <span className='amount'>{expenseSubCategories.Food}</span>

@@ -11,6 +11,8 @@
   --secondary-text-color: #7882a2;
   --danger-btn: #e4615a;
   --table-border: #383d4d;
+  --form-input-border: #929292;
+  --success: #2ecc71;
 }
 h4,
 h5 {
@@ -83,6 +85,29 @@ form > * {
   padding: 10px 15px;
 }
 
+.form-control {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+}
+
+.form-control.success input {
+  border-color: var(--submit-btn-bg-color);
+}
+.form-control input.error {
+  border-color: var(--danger-btn);
+}
+
+/* .form-control.error small{
+  visibility: visible;
+} */
+
+.form-control input {
+  padding: 10px;
+  border-radius: 3px;
+}
+
 form .category,
 form .sub-category {
   display: flex;
@@ -131,10 +156,26 @@ form button,
   background: var(--card-bg-color);
   color: var(--primary-text-color);
   padding: 10px 15px;
-  height: 300px;
 }
-.signin_signup_form form > * {
-  margin: 5px 0;
+.signin_signup_form form > div {
+  margin: 5px 0 20px;
+}
+
+.signin_signup_form form input {
+  border: 1px solid transparent;
+}
+
+.signin_signup_form form input:focus {
+  outline: 0;
+  border-color: var(--form-input-border);
+}
+.signin_signup_form small {
+  margin: 0 !important;
+  padding: 5px 0px;
+  color: var(--danger-btn);
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 .signin_signup_form form button {
@@ -347,6 +388,14 @@ form button,
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.content-heading {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary-text-color);
+  border-bottom: 1px solid var(--table-border);
 }
 
 @media screen and (max-width: 400px) {

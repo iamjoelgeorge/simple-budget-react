@@ -44,6 +44,10 @@ const IncomeCard = () => {
         <p style={{ color: '#3fb485' }}>INR {totalIncome}</p>
       </div>
       <div className='content'>
+        <div className="content-heading">
+          <p>Category</p>
+          <p>Amount</p>
+        </div>
         <ul>
           <li>
             Salary <span className='amount'>{incomeSubCategories.Salary}</span>

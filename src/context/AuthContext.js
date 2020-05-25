@@ -6,9 +6,9 @@ const initialState = {
   users: [
     {
       name: 'test',
-      email: 'test@test',
-      password: 'password',
-      confirmPassword: 'password'
+      email: 'a@a.com',
+      password: 'pass',
+      confirmPassword: 'pass'
     }
   ],
   isAuthenticated: false

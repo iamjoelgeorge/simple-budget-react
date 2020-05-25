@@ -1,56 +1,85 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 import { AuthContext } from '../context/AuthContext';
 
 const SignIn = props => {
   const { users, validateUser } = useContext(AuthContext);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const updateEmail = e => {
-    setEmail(e.target.value);
-  };
-  const updatePassword = e => {
-    setPassword(e.target.value);
-  };
-
-  const onSubmit = e => {
-    e.preventDefault();
-    let isAuthenticated;
-    users.forEach(user => {
-      if (email === user.email && password === user.password) {
-        isAuthenticated = true;
-        validateUser(isAuthenticated);
-        props.history.push('/simple-budget-react/dashboard/');
-      } else {
-        isAuthenticated = false;
-        validateUser(isAuthenticated);
-        alert('Please enter valid credentials');
-      }
-    });
-  };
 
   return (
     <div className='signin_signup_form'>
       <h1>Sign In</h1>
-      <form onSubmit={onSubmit}>
-        <input
-          type='email'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
-          required
-        />
-        <input
-          type='password'
-          placeholder='Password'
-          value={password}
-          onChange={updatePassword}
-          required
-        />
+      <Formik
+        initialValues={{ email: '', password: '' }}
+        onSubmit={(values, setSubmitting) => {
+          let isAuthenticated;
+          users.forEach(user => {
+            if (
+              values.email === user.email &&
+              values.password === user.password
+            ) {
+              isAuthenticated = true;
+              validateUser(isAuthenticated);
+              props.history.push('/simple-budget-react/dashboard/');
+            } else {
+              isAuthenticated = false;
+              validateUser(isAuthenticated);
+              alert('Please enter valid credentials');
+            }
+          });
+        }}
+        validationSchema={Yup.object().shape({
+          email: Yup.string()
+            .email()
+            .required('Email id is Required'),
+          password: Yup.string().required('Please enter your password')
+        })}
+      >
+        {props => {
+          const {
+            values,
+            touched,
+            errors,
+            handleChange,
+            handleBlur,
+            handleSubmit
+          } = props;
 
-        <button type='submit'>Sign In</button>
-      </form>
+          return (
+            <form onSubmit={handleSubmit}>
+              <div className='form-control'>
+                <input
+                  name='email'
+                  type='email'
+                  placeholder='Email'
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.email && touched.email && 'error'}
+                />
+                {errors.email && touched.email && <small>{errors.email}</small>}
+              </div>
+              <div className='form-control'>
+                <input
+                  name='password'
+                  type='password'
+                  placeholder='Password'
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={errors.password && touched.password && 'error'}
+                />
+                {errors.password && touched.password && (
+                  <small>{errors.password}</small>
+                )}
+              </div>
+
+              <button type='submit'>Sign In</button>
+            </form>
+          );
+        }}
+      </Formik>
     </div>
   );
 };
