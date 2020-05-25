@@ -1,6 +1,7 @@
 * {
   outline-width: 1px;
   outline-color: var(--main-bg-color);
+  box-sizing: border-box;
 }
 
 :root {
@@ -15,6 +16,9 @@
   --success: #2ecc71;
   --transparent: transparent;
   --logout-btn-hover: #555965;
+}
+body {
+  background: var(--main-bg-color);
 }
 h4,
 h5 {
@@ -437,4 +441,8 @@ form button,
 .logout-btn:hover {
   color: var(--primary-text-color);
   border: 1px solid var(--logout-btn-hover);
+}
+
+.transaction-summary td.date{
+  width: 110px;
 }

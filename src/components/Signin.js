@@ -5,7 +5,9 @@ import * as Yup from 'yup';
 import { AuthContext } from '../context/AuthContext';
 
 const SignIn = props => {
-  const { users, validateUser } = useContext(AuthContext);
+  const { users, isAuthenticated, validateUser } = useContext(AuthContext);
+
+  localStorage.setItem("isAuthenticated", isAuthenticated)
 
   return (
     <div className='signin_signup_form'>
