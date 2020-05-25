@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/simple-budget-react/static/css/main.9ea25180.chunk.css",
-    "main.js": "/simple-budget-react/static/js/main.80246eee.chunk.js",
-    "main.js.map": "/simple-budget-react/static/js/main.80246eee.chunk.js.map",
+    "main.css": "/simple-budget-react/static/css/main.babeace5.chunk.css",
+    "main.js": "/simple-budget-react/static/js/main.656319c5.chunk.js",
+    "main.js.map": "/simple-budget-react/static/js/main.656319c5.chunk.js.map",
     "runtime-main.js": "/simple-budget-react/static/js/runtime-main.9faa699e.js",
     "runtime-main.js.map": "/simple-budget-react/static/js/runtime-main.9faa699e.js.map",
     "static/js/2.e605dbb9.chunk.js": "/simple-budget-react/static/js/2.e605dbb9.chunk.js",
     "static/js/2.e605dbb9.chunk.js.map": "/simple-budget-react/static/js/2.e605dbb9.chunk.js.map",
     "index.html": "/simple-budget-react/index.html",
-    "precache-manifest.0648828f42ed3611271a54e090ec3ac5.js": "/simple-budget-react/precache-manifest.0648828f42ed3611271a54e090ec3ac5.js",
+    "precache-manifest.464aef92f5782c0459e1b0ee053dc822.js": "/simple-budget-react/precache-manifest.464aef92f5782c0459e1b0ee053dc822.js",
     "service-worker.js": "/simple-budget-react/service-worker.js",
-    "static/css/main.9ea25180.chunk.css.map": "/simple-budget-react/static/css/main.9ea25180.chunk.css.map",
+    "static/css/main.babeace5.chunk.css.map": "/simple-budget-react/static/css/main.babeace5.chunk.css.map",
     "static/js/2.e605dbb9.chunk.js.LICENSE.txt": "/simple-budget-react/static/js/2.e605dbb9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9faa699e.js",
     "static/js/2.e605dbb9.chunk.js",
-    "static/css/main.9ea25180.chunk.css",
-    "static/js/main.80246eee.chunk.js"
+    "static/css/main.babeace5.chunk.css",
+    "static/js/main.656319c5.chunk.js"
   ]
 }
