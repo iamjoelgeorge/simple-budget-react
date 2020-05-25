@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/simple-budget-react/static/css/main.7ebce028.chunk.css",
+    "main.css": "/simple-budget-react/static/css/main.b2ef7e37.chunk.css",
     "main.js": "/simple-budget-react/static/js/main.80246eee.chunk.js",
     "main.js.map": "/simple-budget-react/static/js/main.80246eee.chunk.js.map",
     "runtime-main.js": "/simple-budget-react/static/js/runtime-main.9faa699e.js",
@@ -8,15 +8,15 @@
     "static/js/2.e605dbb9.chunk.js": "/simple-budget-react/static/js/2.e605dbb9.chunk.js",
     "static/js/2.e605dbb9.chunk.js.map": "/simple-budget-react/static/js/2.e605dbb9.chunk.js.map",
     "index.html": "/simple-budget-react/index.html",
-    "precache-manifest.f0ccdb4660d3d490285e51bb8716c608.js": "/simple-budget-react/precache-manifest.f0ccdb4660d3d490285e51bb8716c608.js",
+    "precache-manifest.a70d5e17c8cc4fe4d5fa64463384d386.js": "/simple-budget-react/precache-manifest.a70d5e17c8cc4fe4d5fa64463384d386.js",
     "service-worker.js": "/simple-budget-react/service-worker.js",
-    "static/css/main.7ebce028.chunk.css.map": "/simple-budget-react/static/css/main.7ebce028.chunk.css.map",
+    "static/css/main.b2ef7e37.chunk.css.map": "/simple-budget-react/static/css/main.b2ef7e37.chunk.css.map",
     "static/js/2.e605dbb9.chunk.js.LICENSE.txt": "/simple-budget-react/static/js/2.e605dbb9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9faa699e.js",
     "static/js/2.e605dbb9.chunk.js",
-    "static/css/main.7ebce028.chunk.css",
+    "static/css/main.b2ef7e37.chunk.css",
     "static/js/main.80246eee.chunk.js"
   ]
 }
