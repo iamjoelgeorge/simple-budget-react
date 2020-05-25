@@ -85,6 +85,10 @@ form > * {
   padding: 10px 15px;
 }
 
+.add-transaction-card form > input{
+  padding: 10px 5px;
+}
+
 .form-control {
   display: flex;
   flex-direction: column;
@@ -136,6 +140,8 @@ select#sub-category {
 .add-transaction-card #categories {
   margin-top: 0;
 }
+
+
 
 form button,
 .modal .modal-box_buttons button {

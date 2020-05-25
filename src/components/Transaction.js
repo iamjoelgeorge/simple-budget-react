@@ -38,6 +38,7 @@ const Transaction = ({ transaction }) => {
         <td className='amount'>{transaction.amount}</td>
         <td className='description'>{transaction.description}</td>
         <td className='sub-category'>{transaction.subCategory}</td>
+        <td className='overlay'></td>
       </tr>
 
       {confirmModal}
