@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { TransactionsContext } from '../context/TransactionsContext';
 
@@ -20,8 +20,6 @@ const Chart = () => {
     <div className='chart'>
       <Doughnut
         data={chartData}
-        // width={200}
-        // height={50}
         options={{ cutoutPercentage: 80, animation: { animateScale: true } }}
       />
     </div>

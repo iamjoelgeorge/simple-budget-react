@@ -13,6 +13,7 @@
   --table-border: #383d4d;
   --form-input-border: #929292;
   --success: #2ecc71;
+  --transparent: transparent;
 }
 h4,
 h5 {
@@ -130,7 +131,7 @@ select#sub-category {
   height: 30px;
 }
 .transaction-summary select#sub-category {
-  background: transparent !important;
+  background: var(--transparent) !important;
   color: var(--secondary-text-color) !important;
 }
 .add-transaction-card select#sub-category {
@@ -168,7 +169,7 @@ form button,
 }
 
 .signin_signup_form form input {
-  border: 1px solid transparent;
+  border: 1px solid var(--transparent);
 }
 
 .signin_signup_form form input:focus {
@@ -212,7 +213,7 @@ form button,
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: var(--main-bg-color);
+  background-color: var(--transparent);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,6 +230,7 @@ form button,
   justify-content: center;
   align-items: center;
   color: var(--primary-text-color);
+  z-index: 2;
 }
 
 .modal .modal-box_buttons button {
@@ -287,7 +289,7 @@ form button,
 }
 
 .transaction-summary select {
-  background: transparent;
+  background: var(--transparent);
   color: var(--secondary-text-color);
   border: none;
 }
@@ -326,7 +328,7 @@ form button,
   margin-right: 10px;
   width: auto;
   padding: 8px 19px;
-  background: transparent;
+  background: var(--transparent);
   color: var(--secondary-text-color);
   border: 1px solid var(--table-border);
   border-radius: 6px;
@@ -338,7 +340,7 @@ form button,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: var(--transparent);
   width: 100%;
   max-width: 100%;
   height: 100vh;
@@ -347,7 +349,8 @@ form button,
   margin: 0;
   z-index: 999;
 }
-.add-transaction-container .overlay {
+.add-transaction-container .overlay,
+.modal .overlay {
   width: 100%;
   height: 100%;
   background: var(--main-bg-color);

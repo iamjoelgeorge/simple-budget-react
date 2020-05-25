@@ -29,10 +29,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     updateIncomeExpenseAmount();
-  }, []);
-
-  useEffect(() => {
-    updateIncomeExpenseAmount();
   }, [transactions]);
 
   let chart = null;
