@@ -330,7 +330,6 @@ form button,
   color: var(--secondary-text-color);
   border: 1px solid var(--table-border);
   border-radius: 6px;
-  outline: none;
   cursor: pointer;
 }
 
