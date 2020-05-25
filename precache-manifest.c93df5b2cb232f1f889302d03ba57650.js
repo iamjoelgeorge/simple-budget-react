@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4884f16e9532eb657d87bedf9e262d52",
+    "revision": "39731d8405eea1e349c8425652307530",
     "url": "/simple-budget-react/index.html"
   },
   {
-    "revision": "e138cc13bf9988d333ba",
-    "url": "/simple-budget-react/static/css/main.a8ea4398.chunk.css"
+    "revision": "9106d3c69a4333849588",
+    "url": "/simple-budget-react/static/css/main.73167184.chunk.css"
   },
   {
     "revision": "e0b694b166c6645bdeff",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simple-budget-react/static/js/2.5d98c7d7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e138cc13bf9988d333ba",
-    "url": "/simple-budget-react/static/js/main.dee14f14.chunk.js"
+    "revision": "9106d3c69a4333849588",
+    "url": "/simple-budget-react/static/js/main.451197e7.chunk.js"
   },
   {
     "revision": "0da3a41a791b083e21e6",
