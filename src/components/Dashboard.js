@@ -7,9 +7,12 @@ import { TransactionsContext } from '../context/TransactionsContext';
 import Chart from './Chart';
 
 const Dashboard = () => {
-  const { transactions, updateTotalIncomeExpenses } = useContext(
-    TransactionsContext
-  );
+  const {
+    transactions,
+    updateTotalIncomeExpenses,
+    totalIncome,
+    totalExpenses
+  } = useContext(TransactionsContext);
 
   const updateIncomeExpenseAmount = () => {
     const income = transactions
@@ -32,6 +35,12 @@ const Dashboard = () => {
     updateIncomeExpenseAmount();
   }, [transactions]);
 
+  let chart = null;
+
+  if (totalIncome > 0 || totalExpenses > 0) {
+    chart = <Chart />;
+  }
+
   return (
     <>
       <Header />
@@ -41,7 +50,7 @@ const Dashboard = () => {
       </div>
       <div style={{ maxWidth: '100%' }}>
         <TransactionSummary />
-        <Chart />
+        {chart}
       </div>
     </>
   );
