@@ -5,8 +5,9 @@ import ExpenseCard from './ExpenseCard';
 import TransactionSummary from './TransactionSummary';
 import { TransactionsContext } from '../context/TransactionsContext';
 import Chart from './Chart';
+import Logout from './Logout';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
   const {
     transactions,
     updateTotalIncomeExpenses,
@@ -39,6 +40,7 @@ const Dashboard = () => {
 
   return (
     <>
+      <Logout {...props}/>
       <Header />
       <div id='summary_cards'>
         <IncomeCard />

@@ -14,6 +14,7 @@
   --form-input-border: #929292;
   --success: #2ecc71;
   --transparent: transparent;
+  --logout-btn-hover: #555965;
 }
 h4,
 h5 {
@@ -86,7 +87,7 @@ form > * {
   padding: 10px 15px;
 }
 
-.add-transaction-card form > input{
+.add-transaction-card form > input {
   padding: 10px 5px;
 }
 
@@ -141,8 +142,6 @@ select#sub-category {
 .add-transaction-card #categories {
   margin-top: 0;
 }
-
-
 
 form button,
 .modal .modal-box_buttons button {
@@ -407,7 +406,7 @@ form button,
   border-bottom: 1px solid var(--table-border);
 }
 
-.chart{
+.chart {
   margin-top: 15px;
 }
 
@@ -418,4 +417,24 @@ form button,
   .transaction-summary .transaction-actions {
     margin-top: 15px;
   }
+}
+
+.logout-btn {
+  padding: 10px 15px;
+  background: var(--card-bg-color);
+  color: var(--secondary-text-color);
+  border: 1px solid var(--table-border);
+  border-radius: 3px;
+  position: absolute;
+  font-weight: 400;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  outline-color: var(--logout-btn-hover);
+}
+
+.logout-btn:hover {
+  color: var(--primary-text-color);
+  border: 1px solid var(--logout-btn-hover);
 }

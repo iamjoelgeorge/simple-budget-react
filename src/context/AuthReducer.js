@@ -10,6 +10,11 @@ export default (state, action) => {
         ...state,
         isAuthenticated: action.payload
       };
+    case 'USER_LOGGED_OUT':
+      return {
+        ...state,
+        isAuthenticated: action.payload
+      };
     default:
       return state;
   }

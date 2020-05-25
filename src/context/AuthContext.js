@@ -1,4 +1,4 @@
-import React, { createContext, useReducer} from 'react';
+import React, { createContext, useReducer } from 'react';
 import AuthReducer from './AuthReducer';
 
 //state
@@ -36,13 +36,21 @@ export const AuthProvider = ({ children }) => {
     });
   }
 
+  function userLoggedOut(loggedOut) {
+    dispatch({
+      type: 'USER_LOGGED_OUT',
+      payload: loggedOut
+    });
+  }
+
   return (
     <AuthContext.Provider
       value={{
         users: state.users,
         isAuthenticated: state.isAuthenticated,
         addUser,
-        validateUser
+        validateUser,
+        userLoggedOut
       }}
     >
       {children}

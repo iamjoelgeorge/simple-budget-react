@@ -7,8 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import SignIn from './components/Signin';
 import Dashboard from './components/Dashboard';
-import TransactionSummary from './components/TransactionSummary';
-import AddTransaction from './components/AddTransaction';
+import ProtectedRoute from './components/protected.route';
 
 function App() {
   return (
@@ -18,7 +17,11 @@ function App() {
           <div className='container'>
             <Switch>
               <Route exact path='/simple-budget-react/' component={SignIn} />
-              <Route exact path='/simple-budget-react/dashboard/' component={Dashboard} />
+              <ProtectedRoute
+                exact
+                path='/simple-budget-react/dashboard/'
+                component={Dashboard}
+              />
             </Switch>
           </div>
         </TransactionsProvider>
